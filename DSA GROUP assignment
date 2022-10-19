@@ -1,0 +1,76 @@
+ Group Members
+Group Members	Student Number
+Isabel Tchikenege 	222068698
+Esther Amalovu	222119586
+Ishmael Tapiso Sinalumbu	222011394
+Nicola Basson	222115823
+Ponti Muyenga 	219154899
+Johannes Iitembu (Team Leader)	222073144
+Vanderly Santos	222000449
+Elnino Nghipandulwa	222082437
+
+//CREATE PLAYLIST
+Function createPlaylist()
+Songs=100
+Linked_list= create_new_linked_list
+For i= 0 to Songs-1 
+Do
+addSong(Linked_list,i )
+end for 
+return Linked_list
+END FUNCTION
+
+//PLAY PLAYLIST
+Function play_song(Linked_list, song_number)
+Current_song_playing= Linked_list.head
+For i=0 to song_number-1
+Do
+Current_song_playing = Current_song_playing.next
+End for 
+Play_song(Current_song_playing.data)
+END FUNCTION// ADD SONGS TO PLAYLIST
+Function add_song (Linked_list, song_number)
+new_song = create_new_song(new_song)
+If Linked_list.head= null then 
+Linked_list.head= new_song
+Else 
+current_song = Linked_list.head
+While current_song.next !=null
+Do
+current_song= current_song.next
+end while 
+current_song.next = new_song 
+end if 
+end Function
+// REMOVE SONGS FROM PLAYLIST
+Function remove_song ( Linked_list , song_number)
+current_song =Linked_list.head
+previous_song = null
+ for i = 0 to song_number-1 
+do 
+previous_song = current_song
+current_song = current_song.next
+end for 
+if previous_song = null then 
+Linked_list.head = current_song.next 
+Else 
+previous_song.next = current-song.next
+ end if 
+END Function
+//SEARCH SONG IN PLAYLIST 
+Function search_ playlist ( Linked_list, song_number)
+current_song = Linked_list.head
+while current_song != null 
+do 
+if current_song.data ==song_number then 
+return TRUE 
+end if 
+current_song = current_song.next
+end while 
+return false 
+end function 
+ 
+
+
+
+
